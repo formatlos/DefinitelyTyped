@@ -1,6 +1,6 @@
 // Type definitions for paho-mqtt 1.0
 // Project: https://github.com/eclipse/paho.mqtt.javascript#readme
-// Definitions by: Alex Mikhalev <https://github.com/amikhalev>
+// Definitions by: Alex Mikhalev <https://github.com/amikhalev>, Martin Raedlinger <https://github.com/formatlos>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.1
 
@@ -168,6 +168,23 @@ declare global {
              * If present the set of ports matching the hosts. If hosts contains URIs, this property is not used.
              */
             ports?: number[];
+            /**
+             * Sets whether the client will automatically attempt to reconnect
+             * to the server if the connection is lost.
+             * <ul>
+             *     <li>
+             *         If set to false, the client will not attempt to automatically reconnect to the server
+             *         in the event that the connection is lost.
+             *     </li>
+             *     <li>
+             *         If set to true, in the event that the connection is lost, the client will attempt to
+             *         reconnect to the server. It will initially wait 1 second before it attempts to reconnect,
+             *         for every failed reconnect attempt, the delay will double until it is at 2 minutes at which
+             *         point the delay will stay at 2 minutes.
+             *     </li>
+             * </ul>
+             */
+            reconnect?: boolean;
         }
 
         /**
